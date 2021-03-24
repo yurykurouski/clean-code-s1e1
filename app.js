@@ -32,18 +32,23 @@ var createNewTaskElement = function (taskString) {
     var deleteButtonImg = document.createElement("img");//delete button image
 
     label.innerText = taskString;
-    label.className = 'task__task-name';
+    label.className = "main-page__label task__task-name";
 
     //Each elements, needs appending
+    listItem.className = "tasks__task tasks__task_incomplete";
+
+
     checkBox.type = "checkbox";
+    checkBox.className = "main-page__checkbox";
     editInput.type = "text";
+    editInput.className = "main-page__input task__input";
 
     editButton.innerText = "Edit"; //innerText encodes special characters, HTML does not.
-    editButton.className = "task__edit-btn";
+    editButton.className = "main-page__button task__edit-btn";
 
-    deleteButton.innerText = "Delete";
-    deleteButton.className = "button__delete-btn";
-    deleteButtonImg.src = './remove.svg';
+    deleteButton.className = "main-page__button button__delete-btn";
+    deleteButtonImg.src = "./remove.svg";
+    deleteButtonImg.className = "delete-btn__cover";
     deleteButton.appendChild(deleteButtonImg);
 
 
@@ -81,14 +86,15 @@ var editTask = function () {
 
     var listItem = this.parentNode;
 
-    var editInput = listItem.querySelector('input[type=text]');
+    var editInput = listItem.querySelector("input[type=text]");
     var label = listItem.querySelector("label");
     var editBtn = listItem.querySelector(".task__edit-btn");
-    var containsClass = listItem.classList.contains("tasks__task_incomplete_edit-mode");
-    //If class of the parent is .tasks__task_incomplete_edit-mode
+    var containsClass = editInput.classList.contains("input_edit-mode");
+    console.log(editInput, label, editBtn)
+    //If class of the parent is .tasks__task_edit-mode
     if (containsClass) {
 
-        //switch to .tasks__task_incomplete_edit-mode
+        //switch to .tasks__task_edit-mode
         //label becomes the inputs value.
         label.innerText = editInput.value;
         editBtn.innerText = "Edit";
@@ -97,8 +103,9 @@ var editTask = function () {
         editBtn.innerText = "Save";
     }
 
-    //toggle .tasks__task_incomplete_edit-mode on the parent.
-    listItem.classList.toggle("tasks__task_incomplete_edit-mode");
+    //toggle .tasks__task_edit-mode on the parent.
+    editInput.classList.toggle("input_edit-mode");
+    label.classList.toggle("task_edit-mode__label");
 };
 
 
@@ -132,6 +139,8 @@ var taskIncomplete = function () {
     //When the checkbox is unchecked
     //Append the task list item to the #main-page__tasks_incomplete.
     var listItem = this.parentNode;
+
+
     incompleteTaskHolder.appendChild(listItem);
     bindTaskEvents(listItem, taskCompleted);
 }
@@ -187,7 +196,7 @@ for (var i = 0; i < completedTasksHolder.children.length; i++) {
 
 
 
-// Issues with usability don't get seen until they are in front of a human tester.
+// Issues with usability don"t get seen until they are in front of a human tester.
 
 //prevent creation of empty tasks.
 

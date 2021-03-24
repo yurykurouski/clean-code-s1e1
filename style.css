@@ -157,15 +157,15 @@ button {
 }
 
 /* Edit Task */
-.main-page__input {
+.task__input {
     display: none
 }
 
-.task_incomplete_editMode__input {
+.input_edit-mode {
     display: inline-block;
     width: 224px
 }
 
-.task_incomplete_editMode__label {
+.task_edit-mode__label {
     display: none;
 }
