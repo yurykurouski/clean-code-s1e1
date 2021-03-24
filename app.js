@@ -13,7 +13,6 @@ var addButton = document.getElementsByTagName("button")[0];//first button
 var incompleteTaskHolder = document.getElementById("main-page__tasks_incomplete");//ul of #main-page__tasks_incomplete
 var completedTasksHolder = document.getElementById("main-page__tasks_completed");//main-page__tasks_completed
 
-
 //New task list item
 var createNewTaskElement = function (taskString) {
 
@@ -85,11 +84,11 @@ var editTask = function () {
     var editInput = listItem.querySelector('input[type=text]');
     var label = listItem.querySelector("label");
     var editBtn = listItem.querySelector(".task__edit-btn");
-    var containsClass = listItem.classList.contains("tasks__task_incomplete_editMode");
-    //If class of the parent is .tasks__task_incomplete_editMode
+    var containsClass = listItem.classList.contains("tasks__task_incomplete_edit-mode");
+    //If class of the parent is .tasks__task_incomplete_edit-mode
     if (containsClass) {
 
-        //switch to .tasks__task_incomplete_editMode
+        //switch to .tasks__task_incomplete_edit-mode
         //label becomes the inputs value.
         label.innerText = editInput.value;
         editBtn.innerText = "Edit";
@@ -98,8 +97,8 @@ var editTask = function () {
         editBtn.innerText = "Save";
     }
 
-    //toggle .tasks__task_incomplete_editMode on the parent.
-    listItem.classList.toggle("tasks__task_incomplete_editMode");
+    //toggle .tasks__task_incomplete_edit-mode on the parent.
+    listItem.classList.toggle("tasks__task_incomplete_edit-mode");
 };
 
 
