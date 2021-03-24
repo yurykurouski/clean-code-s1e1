@@ -31,6 +31,10 @@ var createNewTaskElement = function (taskString) {
     var deleteButton = document.createElement("button");//delete button
     var deleteButtonImg = document.createElement("img");//delete button image
 
+    const sectionWrap = document.createElement("section");
+
+    sectionWrap.className = "task__wrap";
+
     label.innerText = taskString;
     label.className = "main-page__label task__task-name";
 
@@ -49,15 +53,17 @@ var createNewTaskElement = function (taskString) {
     deleteButton.className = "main-page__button button__delete-btn";
     deleteButtonImg.src = "./remove.svg";
     deleteButtonImg.className = "delete-btn__cover";
+    deleteButtonImg.alt = "Delete button";
     deleteButton.appendChild(deleteButtonImg);
 
 
     //and appending.
-    listItem.appendChild(checkBox);
-    listItem.appendChild(label);
-    listItem.appendChild(editInput);
-    listItem.appendChild(editButton);
-    listItem.appendChild(deleteButton);
+    listItem.appendChild(sectionWrap);
+    sectionWrap.appendChild(checkBox);
+    sectionWrap.appendChild(label);
+    sectionWrap.appendChild(editInput);
+    sectionWrap.appendChild(editButton);
+    sectionWrap.appendChild(deleteButton);
     return listItem;
 }
 

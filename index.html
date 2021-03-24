@@ -12,50 +12,66 @@
 </head>
 
 <body>
-  <div class="more">
+  <header class="more">
     <img class="more__cover-img" src="./eisenhower-matrix.jpg"><a class="more__info"
       href="https://goal-life.com/page/method/matrix-eisenhower">Want more details?</a>
-  </div>
+  </header>
 
-  <div class="main-page_centered">
-    <p id="main-page__add-element">
+  <main class="main-page_centered">
+
+    <section id="main-page__add-element">
       <label class='main-page__label new-task__add-task' for="main-page__new-task">Add Item</label><input
         class="main-page__input" id="main-page__new-task" type="text"><button
         class='main-page__button button-add-btn'>Add</button>
-    </p>
+    </section>
 
-    <h1 class='main-page__title'>Todo</h1>
+    <article>
+      <h1 class='main-page__title'>Todo</h1>
 
-    <ul class="main-page__tasks main-page__tasks_incomplete" id="main-page__tasks_incomplete">
-      <li class="tasks__task tasks__task_incomplete">
-        <input class='main-page__checkbox' type="checkbox"><label class="main-page__label task__task-name">Pay
-          Bills</label>
-        <input class="main-page__input task__input" type="text"><button
-          class="main-page__button task__edit-btn">Edit</button><button
-          class="main-page__button button__delete-btn"><img class='delete-btn__cover' src="./remove.svg" alt="Delete button"></button>
-      </li>
+      <ul class="main-page__tasks main-page__tasks_incomplete" id="main-page__tasks_incomplete">
 
-      <li class="tasks__task tasks__task_incomplete tasks__task_edit-mode">
-        <input class='main-page__checkbox' type="checkbox"><label
-          class="main-page__label task__task-name task_edit-mode__label">Go Shopping</label>
-        <input class="main-page__input input_edit-mode task__input" type="text" value="Go Shopping" class="task"><button
-          class="main-page__button task__edit-btn">Save</button><button
-          class="main-page__button button__delete-btn"><img class='delete-btn__cover' src="./remove.svg"  alt="Delete button"></button>
-      </li>
-    </ul>
+        <li class="tasks__task tasks__task_incomplete">
+          <section class="task__wrap">
+            <input class='main-page__checkbox' type="checkbox"><label class="main-page__label task__task-name">Pay
+              Bills</label>
+            <input class="main-page__input task__input" type="text"><button
+              class="main-page__button task__edit-btn">Edit</button><button
+              class="main-page__button button__delete-btn"><img class='delete-btn__cover' src="./remove.svg"
+                alt="Delete button"></button>
+          </section>
+        </li>
 
-    <h3 class='main-page__title'>Completed</h3>
+        <li class="tasks__task tasks__task_incomplete tasks__task_edit-mode">
+          <section class="task__wrap">
+            <input class='main-page__checkbox' type="checkbox"><label
+              class="main-page__label task__task-name task_edit-mode__label">Go Shopping</label>
+            <input class="main-page__input input_edit-mode task__input" type="text" value="Go Shopping"
+              class="task"><button class="main-page__button task__edit-btn">Save</button><button
+              class="main-page__button button__delete-btn"><img class='delete-btn__cover' src="./remove.svg"
+                alt="Delete button"></button>
+          </section>
+        </li>
+      </ul>
+    </article>
 
-    <ul class='main-page__tasks main-page__tasks_completed' id="main-page__tasks_completed">
-      <li class="tasks__task tasks__task_completed">
-        <input class='main-page__checkbox' type="checkbox" checked><label
-          class="tasks_completed__label main-page__label task__task-name">See the Doctor</label>
-        <input class="main-page__input task__input" type="text"><button
-          class="main-page__button task__edit-btn">Edit</button><button
-          class="main-page__button button__delete-btn"><img class='delete-btn__cover' src="./remove.svg"  alt="Delete button"></button>
-      </li>
-    </ul>
-  </div>
+    <article>
+      <h3 class='main-page__title'>Completed</h3>
+
+      <ul class='main-page__tasks main-page__tasks_completed' id="main-page__tasks_completed">
+        <li class="tasks__task tasks__task_completed">
+          <section class="task__wrap">
+            <input class='main-page__checkbox' type="checkbox" checked><label
+              class="tasks_completed__label main-page__label task__task-name">See the Doctor</label>
+            <input class="main-page__input task__input" type="text"><button
+              class="main-page__button task__edit-btn">Edit</button><button
+              class="main-page__button button__delete-btn"><img class='delete-btn__cover' src="./remove.svg"
+                alt="Delete button"></button>
+          </section>
+        </li>
+
+      </ul>
+    </article>
+  </main>
 
   <script src="app.js"></script>
 </body>
